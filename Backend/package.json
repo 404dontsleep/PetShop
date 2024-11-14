@@ -1,5 +1,25 @@
 {
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.9.0",
+    "nodemon": "^3.1.7",
     "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist",
+    "dev": "npm run build && node dist/index.js"
+  },
+  "dependencies": {
+    "@vercel/ncc": "^0.38.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.1",
+    "morgan": "^1.10.0"
   }
 }

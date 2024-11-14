@@ -4,7 +4,10 @@
     "target": "ES6",
     "declaration": false,
     "outDir": "./dist",
-    "strict": true
+    "strict": true,
+    "paths": {
+      "@MyTypes/*": ["./Type/*"]
+    }
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "Type/**/*.d.ts"]
 }
