@@ -27,3 +27,11 @@ export const md5WithSalt = (password: string, salt: string) => {
 export const CheckOTP = (OTPSave: string, Salt: string, UserOTP: string) => {
   return OTPSave === md5WithSalt(UserOTP, Salt);
 };
+
+export const ResJSON = (data: any): any => {
+  return {
+    ...data,
+    __v: undefined,
+    _id: undefined,
+  };
+};
