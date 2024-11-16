@@ -5,5 +5,13 @@ interface IUserModel {
   Password: string;
   Role: TRole;
 }
+interface IAddressModel {
+  AddressID: number;
+  UserID: number;
+  ContactNumber: string;
+  Street: string;
+  City: string;
+  State: string;
+}
 
-export { IUserModel, TRole };
+export { IUserModel, TRole, IAddressModel };
