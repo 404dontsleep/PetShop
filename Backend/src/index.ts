@@ -11,8 +11,9 @@ async function StartServer() {
   try {
     await connectDB();
     const app = express();
-    app.use(express.json());
     app.use(cors());
+    app.use("/api/image/upload", express.json({ limit: "50mb" }));
+    app.use(express.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(morgan("dev"));
     app.use("/api", MainRouter);

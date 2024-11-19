@@ -1,8 +1,9 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import { useGlobalErrorStore } from "@/components/GlobalError";
+export const BASE_URL = "http://192.168.1.65:5000/api";
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: BASE_URL,
 });
 
 axiosInstance.interceptors.request.use(
@@ -24,7 +25,8 @@ axiosInstance.interceptors.response.use(
     }
     return response;
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    return Promise.reject(error);
+  }
 );
-
 export default axiosInstance;

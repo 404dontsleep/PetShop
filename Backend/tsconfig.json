@@ -9,5 +9,5 @@
       "@MyTypes/*": ["./Type/*"]
     }
   },
-  "include": ["src/**/*.ts", "Type/**/*.d.ts"]
+  "include": ["src/**/*.ts", "Type/**/*.d.ts", "Type/Product.Type.d.ts"]
 }

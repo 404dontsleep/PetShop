@@ -1,5 +1,5 @@
 import { ALERT, isValidatedEmail, isValidateOTP } from "@/api/Helper";
-import useUserStore from "@/api/store/User.store";
+import useAuthStore from "@/api/store/Auth.store";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import { Alert, View } from "react-native";
@@ -14,7 +14,7 @@ import {
 } from "react-native-paper";
 
 export default function ResetPassword() {
-  const { ResetPassword } = useUserStore();
+  const { ResetPassword } = useAuthStore();
   const [email, setEmail] = useState("");
   const isValidateEmail = isValidatedEmail(email);
   const [loading, setLoading] = useState(false);
@@ -87,7 +87,7 @@ function ResetPasswordOTPModal({
   onDismiss: () => void;
 }) {
   const [OTP, setOTP] = useState("");
-  const { ResetPasswordOTP } = useUserStore();
+  const { ResetPasswordOTP } = useAuthStore();
   const [error, setError] = useState("");
   const handleVerifyOTP = () => {
     ResetPasswordOTP(OTP)

@@ -1,12 +1,12 @@
 import { isValidatedEmail } from "@/api/Helper";
-import useUserStore from "@/api/store/User.store";
+import useAuthStore from "@/api/store/Auth.store";
 import Logo from "@/components/Logo";
 import { Link, router } from "expo-router";
 import React, { useState } from "react";
 import { View } from "react-native";
 import { Button, Snackbar, Text, TextInput } from "react-native-paper";
 export default function SignUp() {
-  const { Register } = useUserStore();
+  const { Register } = useAuthStore();
 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");

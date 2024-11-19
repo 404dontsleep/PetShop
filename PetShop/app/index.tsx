@@ -2,6 +2,7 @@ import { View } from "react-native";
 import { Button, Text } from "react-native-paper";
 import Logo from "@/components/Logo";
 import { Link } from "expo-router";
+
 export default function Index() {
   return (
     <View
@@ -26,9 +27,14 @@ export default function Index() {
           quod libero aperiam.
         </Text>
       </View>
-      <Link href='/auth/sign-in' asChild>
-        <Button mode='contained'>Sign In</Button>
-      </Link>
+      <View style={{ gap: 8 }}>
+        <Link href='/auth/sign-in' asChild>
+          <Button mode='contained'>Sign In</Button>
+        </Link>
+        <Link href='/app' asChild>
+          <Button mode='contained'>App</Button>
+        </Link>
+      </View>
     </View>
   );
 }

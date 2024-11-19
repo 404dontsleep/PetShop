@@ -1,12 +1,13 @@
 import { isValidatedEmail } from "@/api/Helper";
-import useUserStore from "@/api/store/User.store";
+import useAuthStore from "@/api/store/Auth.store";
 import Logo from "@/components/Logo";
 import { Link, router } from "expo-router";
 import React, { useState } from "react";
 import { View } from "react-native";
 import { Button, Snackbar, Text, TextInput } from "react-native-paper";
+import MaskInput from "react-native-mask-input";
 export default function SignIn() {
-  const { Login } = useUserStore();
+  const { Login } = useAuthStore();
 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -22,7 +23,8 @@ export default function SignIn() {
         router.replace("/app");
       })
       .catch((e) => {
-        setError(e.response.data.message);
+        console.log(e);
+        if (e?.response?.data?.message) setError(e.response.data.message);
         setLoading(false);
       });
   };
