@@ -10,6 +10,7 @@ services:
       - "5000:5000"
     volumes:
       - ./Backend:/app
+      - /app/node_modules
     depends_on:
       - db
 
